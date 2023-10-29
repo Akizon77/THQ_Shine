@@ -4,21 +4,41 @@
 #define PI 3.1415926
 int main()
 {
-    float x, y;
-    printf("输入X的值:");
-    scanf("%f", &x);
-    if (x < 0)
+    int nums[20];
+    int poi = 0, zero = 0, neg = 0, i,max,min;
+    printf("输入20个整数：");
+    for (i = 0; i < 20; i++)
     {
-        y = fabs(x + 5);
+        scanf("%d", &nums[i]);
     }
-    else if (x < 5 && x >= 0)
+    max = nums[0];
+    min = nums[0];
+    for (i = 0; i < 20; i++)
     {
-        y = pow(x + 1, 0.5) + sin(23 * PI / 180);
+        if (nums[i] > 0)
+        {
+            poi++;
+        }
+        if (nums[i] == 0)
+        {
+            zero++;
+        }
+        if (nums[i] < 0)
+        {
+            neg++;
+        }
+        if (max < nums[i])
+        {
+            max = nums[i];
+        }
+        if (min > nums[i])
+        {
+            min = nums[i];
+        }
+        
+        
     }
-    else if (x >= 5)
-    {
-        y = 1.0 / 3.0 * (x - 4) + pow(x, 0.3);
-    }
-    printf("%f",y);
+    printf("正数有%d个\n零有%d个\n负数有%d个\n",poi,zero,neg);
+    printf("最大值%d,最小值%d",max,min);
     return 0;
 }
