@@ -1,9 +1,11 @@
 // 函数
 #include <stdio.h>
 #include <math.h>
+#define PI 3.1415926
 int main()
 {
     float x, y;
+    float z = sin(10 * PI / 180.0 );
     printf("输入X的值");
     scanf("%f", &x);
     if (x < 0)
