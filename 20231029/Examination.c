@@ -5,15 +5,20 @@
 int main()
 {
     float x, y;
-    float z = sin(10 * PI / 180.0 );
-    printf("输入X的值");
+    printf("输入X的值:");
     scanf("%f", &x);
     if (x < 0)
-        y = fabs(x) + sin(10);
-    else if (x < 4 && x >= 0)
-        y = pow(x, 2) + pow(x, 0.5);
-    else if (x >= 4)
-        y = 1.0 / 4.0 * x + 17;
-    printf("%f", y);
+    {
+        y = fabs(x + 5);
+    }
+    else if (x < 5 && x >= 0)
+    {
+        y = pow(x + 1, 0.5) + sin(23 * PI / 180);
+    }
+    else if (x >= 5)
+    {
+        y = 1.0 / 3.0 * (x - 4) + pow(x, 0.3);
+    }
+    printf("%f",y);
     return 0;
 }
